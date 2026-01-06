@@ -115,7 +115,7 @@ FINAL SEVERITY COMPUTATION (MANDATORY)
 ====================================================================
 You MUST compute the final severity score as:
 
-severity = bias_score + impact_score + plausibility_score
+severity = (1.5*bias_score) + (1*impact_score) + (0.5*plausibility_score)
 
 • This is a STRICT arithmetic sum.
 • Do NOT normalize, rescale, clip, or reinterpret the result.
@@ -232,3 +232,4 @@ Example:
     async def close(self):
         if not self.simulated:
             await self.client.aclose()
+
